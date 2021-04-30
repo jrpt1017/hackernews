@@ -13,8 +13,12 @@ const useStyles = makeStyles((theme: Theme) => {
       alignItems: 'center',
       boxShadow: '0px 3px 28px rgba(0, 0, 0, 0.08)'
     },
-    footerText: {
+    headerText: {
       margin: 'auto',
+      fontWeight: 'bold',
+    },
+    hacker: {
+      color: '#FBC91B',
     }
   })
 });
@@ -24,8 +28,8 @@ const Header: React.FC<{}> = () => {
 
   return (
     <>
-      <Box display="flex" className={classes.root}>
-        <Typography className={classes.footerText}>Header Hackernews</Typography>
+      <Box display="flex" className={classes.root} fontWeight="fontWeightBold">
+        <Typography className={classes.headerText}><span className={classes.hacker}>HACKER</span>NEWS</Typography>
       </Box>
     </>
   );
