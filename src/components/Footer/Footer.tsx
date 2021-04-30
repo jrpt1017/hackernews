@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     footerText: {
       margin: 'auto',
+      fontWeight: 'bold'
     }
   })
 });
@@ -23,7 +24,7 @@ const Footer: React.FC<{}> = () => {
   return (
     <>
       <Box display="flex" className={classes.root}>
-        <Typography className={classes.footerText}>Footer hacker news</Typography>
+        <Typography className={classes.footerText}>HACKERNEWS.</Typography>
       </Box>
     </>
   );
