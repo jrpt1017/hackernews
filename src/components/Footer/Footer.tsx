@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) => {
       backgroundColor: '#FBC91B',
       height: 99,
       alignItems: 'center',
-      position: 'absolute',
+      position: 'sticky',
       width: '100%',
       bottom: 0,
     },

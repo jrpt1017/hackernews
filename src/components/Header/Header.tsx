@@ -4,7 +4,7 @@ import { Box, createStyles, makeStyles, Theme, Typography } from '@material-ui/c
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
     root: {
-      position: 'absolute',
+      position: 'sticky',
       width: '100%',
       backgroundColor: '#FFFFFF',
       height: 51,
