@@ -1,8 +1,7 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
-import { getNews } from '../../services';
-import { INews } from '../types';
+import { getNews, getNewsByID } from '../../services';
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
@@ -20,14 +19,22 @@ const Dashboard: React.FC<{}> = () => {
   React.useEffect(() => {
     const setData = async () => {
       const items = await getNews();
-      setNews(items);
+      setNews(items.slice(0, 6));
     };
     setData();
   }, [])
 
+  const getData = async (id: number) => {
+    const newsItem = await getNewsByID(id);
+    return newsItem;
+  };
+
   return (
     <div className={classes.root}>
-      <NewsCard />
+      {news.map((newsItem: number) => {
+        console.log(newsItem);
+        return (<NewsCard id={newsItem} />)
+      })}
     </div>
   );
 }
