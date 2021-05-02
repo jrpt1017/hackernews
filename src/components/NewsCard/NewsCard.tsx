@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { CardHeader, CardActions, CardContent, Card, Typography, Button } from '@material-ui/core';
 import { getNewsByID } from '../../services';
-import { INewsItem } from '../types';
+import { INewsItem } from '../../types';
 
 const useStyles = makeStyles({
   root: {

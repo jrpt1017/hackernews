@@ -1,8 +1,8 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
-import { getNews, getNewsByID } from '../../services';
-import { INewsItem } from '../types';
+import { getNews } from '../../services';
+import { INewsItem } from '../../types';
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
@@ -28,7 +28,11 @@ const Dashboard: React.FC<{}> = () => {
   return (
     <div className={classes.root}>
       {news.map((newsItem: INewsItem) => {
-        return (<NewsCard {...newsItem} />)
+        return (
+          <React.Fragment key={newsItem.id}>
+            <NewsCard {...newsItem} />
+          </React.Fragment>
+        )
       })}
     </div>
   );
