@@ -17,33 +17,19 @@ const useStyles = makeStyles({
   },
 });
 
-interface INewsCard {
-  id: number,
-}
-
-const NewsCard: React.FC<INewsCard> = (props: INewsCard) => {
+const NewsCard: React.FC<INewsItem> = (props: INewsItem) => {
   const classes = useStyles();
-  const [newsData, setNewsData] = React.useState<INewsItem>();
   const dummyText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam tempore iure id quo! Necessitatibus cumque, 
   voluptatem perspiciatis accusamus sit vel reiciendis sapiente perferendis facilis, laboriosam, accusantium aliquid molestiae suscipit deserunt!`;
-
-  React.useEffect(() => {
-    const getData = async (id: number) => {
-      const newsItem = await getNewsByID(id);
-      setNewsData(newsItem)
-    };
-    getData(props.id);
-  }, [props.id]);
-
 
   return (
     <Card className={classes.root}>
       <CardHeader
         className={classes.title}
-        title={newsData?.title}
+        title={props?.title}
       />
       <CardContent>
-        <Typography>{newsData?.text || dummyText}</Typography>
+        <Typography>{props?.text || dummyText}</Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
