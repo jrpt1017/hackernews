@@ -1,4 +1,5 @@
 import { createStyles, makeStyles, Theme, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import NewsCard from '../NewsCard/NewsCard';
@@ -18,11 +19,13 @@ const useStyles = makeStyles((theme: Theme) => {
       listStyleType: 'none',
     },
     listItem: {
-      // lineHeight: theme.typography.pxToRem(25),
-      // width: '65%',
-      // height: 150,
       padding: 20,
       width: '65%',
+    },
+    linkTo: {
+      display: 'contents',
+      textDecoration: 'none',
+      textDecorationColor: 'none',
     },
   })
 })
@@ -36,7 +39,6 @@ const Dashboard: React.FC<{}> = () => {
     const setData = async () => {
       dispatch(togglePageLoading(true));
       const items = await getNews();
-      console.log(items);
       setNews(items)
       dispatch(togglePageLoading(false));
     };
@@ -46,10 +48,11 @@ const Dashboard: React.FC<{}> = () => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" className={classes.root}>
       {news.map((newsItem: INewsItem) => {
+        console.log(newsItem.url);
         return (
-          <React.Fragment key={newsItem.id}>
+          <a href={newsItem.url} key={newsItem.id} className={classes.linkTo} target="_blank" rel="noreferrer">
             <NewsCard {...newsItem} />
-          </React.Fragment>
+          </a>
         )
       })}
     </Box>

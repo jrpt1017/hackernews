@@ -2,6 +2,7 @@ export interface INewsItem {
   id: number,
   type: 'job' | 'story' | 'comment' | 'poll' | 'pollopt',
   deleted?: boolean,
+  url?: string
   by?: string,
   time?: number,
   dead?: boolean,
@@ -9,6 +10,5 @@ export interface INewsItem {
   descendants?: number,
   score?: number,
   title?: string,
-  url?: string
   text?: string,
 }
