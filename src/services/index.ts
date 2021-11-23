@@ -13,7 +13,7 @@ export const getNewsByID = async (newsID: number) => {
 export const getNews = async () => {
   try {
     const news = await axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
-    const newsArray = await Promise.all(news.data.slice(0, 5).map(async (newsId: number) => {
+    const newsArray = await Promise.all(news.data.slice(0, 15).map(async (newsId: number) => {
       return await getNewsByID(newsId);
     }));
     console.log('newsArray', newsArray)

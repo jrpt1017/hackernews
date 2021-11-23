@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
     root: {
       padding: 15,
-      height: 'calc(100vh - 150px)',
+      // height: 'calc(100vh - 150px)',
       overflow: 'scroll',
       gap: 15,
+      backgroundColor: '#f2f3f5'
     },
     listTag: {
       listStyleType: 'none',

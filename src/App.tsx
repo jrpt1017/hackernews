@@ -21,7 +21,7 @@ const App: React.FC<{}> = () => {
         <Route path={RouteTypes.NEWS} component={Dashboard} />
       </Switch>
       <Dashboard />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
